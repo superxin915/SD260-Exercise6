@@ -21,24 +21,15 @@ class App extends React.Component {
 
 	addToCart = item => {
 		this.setState(prevState => ({
-			cartItems: [
-				...prevState.cartItems,
-				{
-					name: item.name,
-					price: item.price,
-					id: this.cartItemId,
-				},
-			],
-    }));
-    
+			cartItems: [...prevState.cartItems, { ...item, id: this.cartItemId }],
+		}));
+
 		this.cartItemId++;
 	};
 
 	remove = selectedItem => {
 		this.setState(prevState => ({
-			cartItems: [
-				...prevState.cartItems.filter(item => item.id !== selectedItem.id),
-			],
+			cartItems: [...prevState.cartItems.filter(item => item !== selectedItem)],
 		}));
 	};
 

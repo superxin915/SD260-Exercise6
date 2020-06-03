@@ -1,8 +1,12 @@
 import React from "react";
 import CartItem from "./CartItem";
-import CartTotal from "./CartTotal";
 
 export default function cart(props) {
+	const total = props.cartItems.reduce(
+		(total, cartItem) => (total += cartItem.price),
+		0
+	);
+
 	return (
 		<aside className="cart">
 			<h2>Your Cart</h2>
@@ -15,7 +19,9 @@ export default function cart(props) {
 					/>
 				))}
 			</ul>
-			<CartTotal cartItems={props.cartItems} />
+			{props.cartItems.length > 0 && (
+				<div className="total">Total: ${total.toFixed(2)}</div>
+			)}
 		</aside>
 	);
 }
