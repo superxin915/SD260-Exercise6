@@ -1,4 +1,6 @@
-To begin, you'll need to clone the app from this [repository](https://github.com/yuxinli915/SD260-Exercise6)
+# Shopping Cart
+
+To begin, you'll need to clone the app from this [repository](https://github.com/yuxinli915/Shopping_Cart).
 
 All the HTML and CSS is already included in `App.js` and `index.css` files. You'll need to perform an `npm install` to install all the packages necessary to run the application. 
 
